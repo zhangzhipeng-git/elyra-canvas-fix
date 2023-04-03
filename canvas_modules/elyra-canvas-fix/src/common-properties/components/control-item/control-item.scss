@@ -1,0 +1,77 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.properties-control-item {
+	&.hide {
+		display: none;
+	}
+	&[disabled] { //only disabled label and description.  Control will disabled itself
+		.properties-label-container, .properties-control-description {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+	// TODO: Remove this after all controls are accessible - CSS for inaccessible controls
+	.properties-action-image  {
+		&.right {
+			margin-left: auto;
+			float: right;
+		}
+		&.left {
+			float: left;
+		}
+	}
+}
+
+.properties-label-container {
+	display: flex;
+	align-items: center;
+	padding-bottom: $spacing-03;
+	label, .properties-indicator {
+		@include carbon--type-style("label-01");
+		color: $text-02;
+		padding-left: $spacing-02;
+	}
+	&.table-control {
+		label, .properties-indicator {
+			@include carbon--type-style("productive-heading-01");
+			color: $text-01;
+		}
+	}
+}
+
+.properties-label-container, .properties-summary-link-container, .properties-checkbox-tooltip-container, .properties-radioset-panel {
+	.tooltip-container {
+		display: flex;
+		width: 16px;
+		height: 16px;
+		margin-left: $spacing-03;
+		cursor: pointer;
+	}
+}
+
+.properties-control-description {
+	@include carbon--type-style("helper-text-01");
+	color: $text-02;
+	padding-bottom: $spacing-03;
+}
+
+// Removed padding in properties-label-container because .bx--label has margin-bottom: $spacing-03
+.bx--label {
+	.properties-label-container {
+		padding-bottom: 0;
+	}
+}

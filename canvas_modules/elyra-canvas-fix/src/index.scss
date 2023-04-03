@@ -1,0 +1,31 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import 'carbon-components/scss/globals/scss/vars';
+@import 'carbon-components/scss/globals/scss/typography';
+
+@import './common-properties/index.scss';
+@import './notification-panel/notification-panel.scss';
+@import './icons/icon.scss';
+@import './toolbar/toolbar.scss';
+@import './tooltip/tooltip.scss';
+@import './context-menu/context-menu.scss';
+.fix {
+  @import './palette/palette.scss';
+}
+@import './common-canvas/common-canvas.scss';
+@import './common-canvas/svg-canvas-d3.scss';
+@import './color-picker/color-picker.scss';

@@ -1,0 +1,55 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.canvas-icon .stroke, .canvas-icon.stroke {
+	stroke: $icon-01;
+}
+
+.canvas-icon .fill, .canvas-icon.fill {
+	fill: $icon-01;
+}
+
+.canvas-icon[disabled] {
+	fill: $disabled-02;
+}
+
+svg.properties-icon, svg.canvas-icon {
+	fill: $icon-01;
+}
+
+svg.canvas-state-icon-error {
+	fill: $support-01;
+}
+
+svg.canvas-state-icon-success {
+	fill: $support-02;
+}
+
+svg.canvas-state-icon-warning {
+	fill: $support-03;
+	[data-icon-path="inner-path"] { // exclamation mark
+		fill: $ui-05;
+		opacity: 1;
+	}
+}
+
+svg.canvas-state-icon-info {
+	fill: $support-04;
+}
+
+svg.canvas-state-icon-information-hollow {
+	fill: $icon-01;
+}

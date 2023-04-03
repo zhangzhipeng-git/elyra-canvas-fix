@@ -1,0 +1,1091 @@
+{
+  "titleDefinition": {
+    "title": "Action Test",
+    "editable": false
+  },
+  "current_parameters": {
+    "number": 0,
+    "fields": [
+      "age"
+    ],
+    "weather": "Mild, rainy",
+    "moon_phase": "Full",
+    "meteor_showers": "Perseids",
+    "hide_button": true,
+    "disable_button": true,
+    "hide_image": false,
+    "disable_image": false,
+    "disable_image_text": "this should be disabled when button is clicked",
+    "disable_button_text": "this should be disabled when button is clicked",
+    "oneofselect": "blue",
+    "oneofselect_null": null,
+    "oneofselect_empty_string": "",
+    "oneofselect_custom_value": "custom",
+    "radioString": "entropy",
+    "radioBooleanWithEnum": true,
+    "radioBooleanWithoutEnum": true,
+    "radioBooleanWithLabels": false
+  },
+  "parameters": [
+    {
+      "id": "number",
+      "type": "integer"
+    },
+    {
+      "id": "fields",
+      "type": "array[string]",
+      "role": "column",
+      "required": true
+    },
+    {
+      "id": "weather",
+      "type": "string"
+    },
+    {
+      "id": "moon_phase",
+      "type": "string"
+    },
+    {
+      "id": "meteor_showers",
+      "type": "string"
+    },
+    {
+      "id": "hide_button",
+      "type": "boolean"
+    },
+    {
+      "id": "disable_button",
+      "type": "boolean"
+    },
+    {
+      "id": "hide_image",
+      "type": "boolean"
+    },
+    {
+      "id": "disable_image",
+      "type": "boolean"
+    },
+    {
+      "id": "disable_image_text",
+      "type": "string"
+    },
+    {
+      "id": "disable_button_text",
+      "type": "string"
+    },
+    {
+      "id": "oneofselect",
+      "enum": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "required": true
+    },
+    {
+      "id": "oneofselect_null",
+      "enum": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "required": true
+    },
+    {
+      "id": "oneofselect_empty_string",
+      "enum": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "required": true
+    },
+    {
+      "id": "oneofselect_custom_value",
+      "enum": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple"
+      ],
+      "required": true
+    },
+    {
+      "id": "radioString",
+      "enum": [
+        "gini",
+        "entropy"
+      ],
+      "required": true
+    },
+    {
+      "id": "radioBooleanWithEnum",
+      "enum": [
+        true,
+        false
+      ],
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "id": "radioBooleanWithoutEnum",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "id": "radioBooleanWithLabels",
+      "type": "boolean",
+      "required": true
+    }
+  ],
+  "uihints": {
+    "id": "actions",
+    "icon": "images/actions.svg",
+    "label": {
+      "default": "Action Test"
+    },
+    "parameter_info": [
+      {
+        "parameter_ref": "number",
+        "label": {
+          "default": "Integer"
+        },
+        "description": {
+          "default": "Try pressing Increment or Decrement buttons",
+          "link": {
+            "id": "link_for_number",
+            "data": {
+              "something": "option data"
+            }
+          }
+        },
+        "control": "readonly"
+      },
+      {
+        "parameter_ref": "fields",
+        "label": {
+          "default": "Fields"
+        },
+        "description": {
+          "default": "Press 'Add Field' to add a new field"
+        },
+        "summary": true
+      },
+      {
+        "parameter_ref": "weather",
+        "label": {
+          "default": "Current weather"
+        },
+        "description": {
+          "default": "Try pressing the above images",
+          "link": {
+            "id": "link_for_weather",
+            "data": {
+              "something": "option data"
+            }
+          }
+        },
+        "control": "readonly"
+      },
+      {
+        "parameter_ref": "moon_phase",
+        "label": {
+          "default": "Current moon phase"
+        },
+        "description": {
+          "default": "Try pressing the moon image"
+        },
+        "control": "readonly",
+        "action_ref": "moon"
+      },
+      {
+        "parameter_ref": "meteor_showers",
+        "label": {
+          "default": "Current meteoer showers"
+        },
+        "description": {
+          "default": "Try pressing the star image"
+        },
+        "control": "readonly",
+        "action_ref": "meteor"
+      },
+      {
+        "parameter_ref": "hide_button",
+        "label": {
+          "default": "Hide action button"
+        }
+      },
+      {
+        "parameter_ref": "disable_button",
+        "label": {
+          "default": "Disable action button"
+        }
+      },
+      {
+        "parameter_ref": "hide_image",
+        "label": {
+          "default": "Hide action image"
+        }
+      },
+      {
+        "parameter_ref": "disable_image",
+        "label": {
+          "default": "Disable action image"
+        }
+      },
+      {
+        "parameter_ref": "disable_image_text",
+        "label": {
+          "default": "Disable image"
+        },
+        "description": {
+          "default": "Try pressing the moon image"
+        },
+        "control": "readonly",
+        "action_ref": "image_cond_disable"
+      },
+      {
+        "parameter_ref": "disable_button_text",
+        "label": {
+          "default": "Disable button text"
+        },
+        "description": {
+          "default": "Try pressing the button"
+        },
+        "control": "readonly"
+      },
+      {
+        "parameter_ref": "oneofselect",
+        "label": {
+          "default": "Accessible control - action image right"
+        },
+        "description": {
+          "default": "oneofselect control with action image placement right"
+        },
+        "class_name": "oneofselect-control-class",
+        "action_ref": "moon"
+      },
+      {
+        "parameter_ref": "oneofselect_null",
+        "label": {
+          "default": "Accessible control - action image left"
+        },
+        "description": {
+          "default": "oneofselect control with action image placement left"
+        },
+        "action_ref": "moon1"
+      },
+      {
+        "parameter_ref": "oneofselect_empty_string",
+        "label": {
+          "default": "Accessible control - action image w/o placement"
+        },
+        "description": {
+          "default": "oneofselect control with action image without placement"
+        },
+        "action_ref": "moon2"
+      },
+      {
+        "parameter_ref": "oneofselect_custom_value",
+        "label": {
+          "default": "Accessible control - action button"
+        },
+        "description": {
+          "default": "oneofselect control with action button"
+        },
+        "custom_value_allowed": true,
+        "action_ref": "increment1"
+      },
+      {
+        "parameter_ref": "radioString",
+        "label": {
+          "default": "Inaccessible control - action image right"
+        },
+        "description": {
+          "default": "Inaccessible control with action image placement right"
+        },
+        "control": "radioset",
+        "resource_key": "withradioString",
+        "class_name": "radioset-control-class",
+        "action_ref": "moon3"
+      },
+      {
+        "parameter_ref": "radioBooleanWithEnum",
+        "label": {
+          "default": "Inaccessible control - action image left"
+        },
+        "description": {
+          "default": "Inaccessible control with action image placement left"
+        },
+        "label_visible": true,
+        "control": "radioset",
+        "resource_key": "withradioBoolean",
+        "action_ref": "moon4"
+      },
+      {
+        "parameter_ref": "radioBooleanWithoutEnum",
+        "label": {
+          "default": "Inaccessible control - action image w/o placement"
+        },
+        "description": {
+          "default": "Inaccessible control with action image without placement"
+        },
+        "label_visible": true,
+        "control": "radioset",
+        "action_ref": "moon5"
+      },
+      {
+        "parameter_ref": "radioBooleanWithLabels",
+        "label": {
+          "default": "Inaccessible control - action button"
+        },
+        "description": {
+          "default": "Inaccessible control with action button"
+        },
+        "label_visible": true,
+        "control": "radioset",
+        "resource_key": "radioBooleanWithLabels",
+        "action_ref": "increment2"
+      }
+    ],
+    "action_info": [
+
+      {
+        "id": "increment",
+        "label": {
+          "resource_key": "increment"
+        },
+        "description": {
+          "default": "This will increment the number field by 1."
+        },
+        "control": "button",
+        "button": {
+          "kind": "primary",
+          "size": "sm"
+        },
+        "data": {
+          "parameter_ref": "number"
+        }
+      },
+      {
+        "id": "increment1",
+        "label": {
+          "resource_key": "increment"
+        },
+        "description": {
+          "default": "This will increment the number field by 1."
+        },
+        "control": "button",
+        "button": {
+          "kind": "secondary",
+          "size": "lg"
+        },
+        "data": {
+          "parameter_ref": "oneofselect_custom_value"
+        }
+      },
+      {
+        "id": "increment2",
+        "label": {
+          "resource_key": "increment"
+        },
+        "description": {
+          "default": "This will increment the number field by 1."
+        },
+        "control": "button",
+        "button": {
+          "kind": "ghost",
+          "size": "md"
+        },
+        "data": {
+          "parameter_ref": "radioBooleanWithLabels"
+        }
+      },
+      {
+        "id": "decrement",
+        "label": {
+          "resource_key": "decrement"
+        },
+        "control": "button",
+        "data": {
+          "parameter_ref": "number"
+        }
+      },
+      {
+        "id": "dm-update",
+        "label": {
+          "resource_key": "dm-update"
+        },
+        "control": "button",
+        "data": {}
+      },
+      {
+        "id": "winter",
+        "label": {
+          "resource_key": "winter"
+        },
+        "description": {
+          "resource_key": "winter"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "weather"
+        },
+        "image": {
+          "url": "/images/winter.jpg",
+          "size": {
+            "height": 60,
+            "width": 60
+          },
+          "tooltip_direction": "bottom"
+        }
+      },
+      {
+        "id": "summer",
+        "label": {
+          "resource_key": "summer"
+        },
+        "description": {
+          "resource_key": "summer"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "weather"
+        },
+        "image": {
+          "url": "/images/summer.jpg",
+          "size": {
+            "height": 60,
+            "width": 60
+          },
+          "tooltip_direction": "top"
+        }
+      },
+      {
+        "id": "fall",
+        "label": {
+          "resource_key": "fall"
+        },
+        "description": {
+          "resource_key": "This is a long tooltip for action image. Adding this line makes it a multi-line tooltip."
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "weather"
+        },
+        "image": {
+          "url": "/images/fall.jpg",
+          "placement": "right",
+          "size": {
+            "height": 60,
+            "width": 60
+          },
+          "tooltip_direction": "left"
+        }
+      },
+      {
+        "id": "spring",
+        "label": {
+          "resource_key": "spring"
+        },
+        "description": {
+          "resource_key": "spring"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "weather"
+        },
+        "image": {
+          "url": "/images/spring.jpg",
+          "size": {
+            "height": 60,
+            "width": 60
+          },
+          "tooltip_direction": "right"
+        }
+      },
+      {
+        "id": "moon",
+        "label": {
+          "resource_key": "moon"
+        },
+        "description": {
+          "default": "This is a tooltip for action image."
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "moon_phase"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "placement": "right",
+          "size": {
+            "height": 20,
+            "width": 25
+          }
+        }
+      },
+      {
+        "id": "moon1",
+        "label": {
+          "resource_key": "moon"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "oneofselect_null"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "placement": "left",
+          "size": {
+            "height": 30,
+            "width": 30
+          }
+        }
+      },
+      {
+        "id": "moon2",
+        "label": {
+          "resource_key": "moon"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "oneofselect_empty_string"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "size": {
+            "height": 30,
+            "width": 30
+          }
+        }
+      },
+      {
+        "id": "moon3",
+        "label": {
+          "resource_key": "moon"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "radioString"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "placement": "right",
+          "size": {
+            "height": 30,
+            "width": 30
+          }
+        }
+      },
+      {
+        "id": "moon4",
+        "label": {
+          "resource_key": "moon"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "radioString"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "placement": "left",
+          "size": {
+            "height": 30,
+            "width": 30
+          }
+        }
+      },
+      {
+        "id": "moon5",
+        "label": {
+          "resource_key": "moon"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "radioString"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "size": {
+            "height": 30,
+            "width": 30
+          }
+        }
+      },
+      {
+        "id": "meteor",
+        "label": {
+          "resource_key": "meteor"
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "meteor_showers"
+        },
+        "image": {
+          "url": "/images/meteor.jpg",
+          "placement": "left",
+          "size": {
+            "height": 20,
+            "width": 25
+          }
+        }
+      },
+      {
+        "id": "button_cond_hide",
+        "label": {
+          "default": "visible action"
+        },
+        "description": {
+          "default": "Test visible conditions."
+        },
+        "control": "button",
+        "data": {
+          "parameter_ref": "xyz"
+        }
+      },
+      {
+        "id": "button_cond_disable",
+        "label": {
+          "default": "enable action"
+        },
+        "description": {
+          "default": "Test enable conditions."
+        },
+        "control": "button",
+        "data": {
+          "parameter_ref": "disable_button_text"
+        }
+      },
+      {
+        "id": "image_cond_hide",
+        "label": {
+          "default": "visible action"
+        },
+        "description": {
+          "default": "Test visible image conditions."
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "xyz"
+        },
+        "image": {
+          "url": "/images/meteor.jpg",
+          "placement": "left",
+          "size": {
+            "height": 20,
+            "width": 25
+          }
+        }
+      },
+      {
+        "id": "image_cond_disable",
+        "label": {
+          "default": "enable action"
+        },
+        "description": {
+          "default": "Test enable image conditions."
+        },
+        "control": "image",
+        "data": {
+          "parameter_ref": "disable_image_text"
+        },
+        "image": {
+          "url": "/images/moon.jpg",
+          "placement": "right",
+          "size": {
+            "height": 20,
+            "width": 25
+          }
+        }
+      }
+    ],
+    "group_info": [
+      {
+        "id": "action-tests",
+        "label": {
+          "default": "Actions"
+        },
+        "type": "panels",
+        "group_info": [
+          {
+            "id": "increment-action-panel",
+            "type": "actionPanel",
+            "label": {
+              "default": "Action panel label"
+            },
+            "description": {
+              "default": "Action panel description",
+              "link": {
+                "id": "link_for_increment-action-panel",
+                "data": {
+                  "something": "option data"
+                }
+              }
+            },
+            "action_refs": [
+              "increment",
+              "decrement"
+            ]
+          },
+          {
+            "id": "number-control",
+            "type": "controls",
+            "parameter_refs": [
+              "number"
+            ]
+          },
+          {
+            "id": "weather-action-panel",
+            "type": "actionPanel",
+            "label": {
+              "resource_key": "weather.action.panel.label"
+            },
+            "description": {
+              "resource_key": "weather.action.panel.desc"
+            },
+            "action_refs": [
+              "winter",
+              "spring",
+              "summer",
+              "fall"
+            ]
+          },
+          {
+            "id": "weather-control",
+            "type": "controls",
+            "parameter_refs": [
+              "weather"
+            ]
+          },
+          {
+            "id": "moon-control",
+            "type": "controls",
+            "parameter_refs": [
+              "moon_phase"
+            ]
+          },
+          {
+            "id": "meteor-control",
+            "type": "controls",
+            "parameter_refs": [
+              "meteor_showers"
+            ]
+          },
+          {
+            "id": "oneofselect-control",
+            "type": "controls",
+            "parameter_refs": [
+              "oneofselect"
+            ]
+          },
+          {
+            "id": "oneofselect-null-control",
+            "type": "controls",
+            "parameter_refs": [
+              "oneofselect_null"
+            ]
+          },
+          {
+            "id": "oneofselect-empty-string-control",
+            "type": "controls",
+            "parameter_refs": [
+              "oneofselect_empty_string"
+            ]
+          },
+          {
+            "id": "oneofselect_custom_value-control",
+            "type": "controls",
+            "parameter_refs": [
+              "oneofselect_custom_value"
+            ]
+          },
+          {
+            "id": "radioString-control",
+            "type": "controls",
+            "parameter_refs": [
+              "radioString"
+            ]
+          },
+          {
+            "id": "radioBooleanWithEnum-control",
+            "type": "controls",
+            "parameter_refs": [
+              "radioBooleanWithEnum"
+            ]
+          },
+          {
+            "id": "radioBooleanWithoutEnum-control",
+            "type": "controls",
+            "parameter_refs": [
+              "radioBooleanWithoutEnum"
+            ]
+          },
+          {
+            "id": "radioBooleanWithLabels-control",
+            "type": "controls",
+            "parameter_refs": [
+              "radioBooleanWithLabels"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "action-conditions",
+        "label": {
+          "default": "Conditions"
+        },
+        "type": "panels",
+        "group_info": [
+          {
+            "id": "hide_button-control-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "hide_button"
+            ]
+          },
+          {
+            "id": "hide_button-action-panel",
+            "type": "actionPanel",
+            "action_refs": [
+              "button_cond_hide"
+            ]
+          },
+          {
+            "id": "disable_button-control-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "disable_button"
+            ]
+          },
+          {
+            "id": "disable_button-action-panel",
+            "type": "actionPanel",
+            "action_refs": [
+              "button_cond_disable"
+            ]
+          },
+          {
+            "id": "disable_button-text-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "disable_button_text"
+            ]
+          },
+          {
+            "id": "hide_image-control-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "hide_image"
+            ]
+          },
+          {
+            "id": "hide_image-action-panel",
+            "type": "actionPanel",
+            "action_refs": [
+              "image_cond_hide"
+            ]
+          },
+          {
+            "id": "disable_image-control-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "disable_image"
+            ]
+          },
+          {
+            "id": "disable_image-action-panel",
+            "type": "controls",
+            "parameter_refs": [
+              "disable_image_text"
+            ]
+          }
+
+        ]
+      },
+      {
+        "id": "summary-panel",
+        "label": {
+          "default": "Summary Panel Actions"
+        },
+        "type": "summaryPanel",
+        "group_info": [
+          {
+            "id": "dm-action-panel",
+            "type": "actionPanel",
+            "action_refs": [
+              "dm-update"
+            ]
+          },
+          {
+            "id": "summary-controls",
+            "type": "controls",
+            "parameter_refs": [
+              "fields"
+            ]
+          }
+        ]
+      }
+    ],
+    "help": {}
+  },
+  "conditions": [
+    {
+      "visible": {
+        "action_refs": [
+          "button_cond_hide"
+        ],
+        "evaluate": {
+          "condition": {
+            "parameter_ref": "hide_button",
+            "op": "equals",
+            "value": false
+          }
+        }
+      }
+    },
+    {
+      "enabled": {
+        "action_refs": [
+          "button_cond_disable"
+        ],
+        "parameter_refs": [
+          "disable_button_text"
+        ],
+        "evaluate": {
+          "condition": {
+            "parameter_ref": "disable_button",
+            "op": "equals",
+            "value": false
+          }
+        }
+      }
+    },
+    {
+      "visible": {
+        "action_refs": [
+          "image_cond_hide"
+        ],
+        "evaluate": {
+          "condition": {
+            "parameter_ref": "hide_image",
+            "op": "equals",
+            "value": false
+          }
+        }
+      }
+    },
+    {
+      "enabled": {
+        "action_refs": [
+          "image_cond_disable"
+        ],
+        "parameter_refs": [
+          "disable_image_text"
+        ],
+        "evaluate": {
+          "condition": {
+            "parameter_ref": "disable_image",
+            "op": "equals",
+            "value": false
+          }
+        }
+      }
+    }
+
+
+  ],
+  "dataset_metadata": [
+    {
+      "fields": [
+        {
+          "name": "Age",
+          "type": "integer",
+          "metadata": {
+            "description": "",
+            "measure": "range",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "Sex",
+          "type": "string",
+          "metadata": {
+            "description": "",
+            "measure": "discrete",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "BP",
+          "type": "string",
+          "metadata": {
+            "description": "",
+            "measure": "discrete",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "Cholesterol",
+          "type": "string",
+          "metadata": {
+            "description": "",
+            "measure": "discrete",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "Na",
+          "type": "double",
+          "metadata": {
+            "description": "",
+            "measure": "range",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "K",
+          "type": "double",
+          "metadata": {
+            "description": "",
+            "measure": "range",
+            "modeling_role": "input"
+          }
+        },
+        {
+          "name": "Drug",
+          "type": "string",
+          "metadata": {
+            "description": "",
+            "measure": "discrete",
+            "modeling_role": "input"
+          }
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "increment": "Increment",
+    "decrement": "Decrement",
+    "dm-update": "Add Field",
+    "winter":    "Winter",
+    "summer":    "Summer",
+    "fall":      "Fall",
+    "spring":    "Spring",
+    "moon":      "Moon",
+    "meteor":    "Meteor",
+    "weather.action.panel.label": "Weather action panel label",
+    "weather.action.panel.desc": "Weather action panel description"
+  }
+}

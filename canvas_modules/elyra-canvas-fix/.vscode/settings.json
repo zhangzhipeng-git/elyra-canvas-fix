@@ -1,0 +1,11 @@
+{
+    "i18n-ally.localesPaths": [
+        "locales",
+        "locales/command-actions/locales",
+        "locales/common-canvas/locales",
+        "locales/common-properties/locales",
+        "locales/palette/locales",
+        "locales/toolbar/locales",
+        "src/common-properties/controls/expression/languages"
+    ]
+}

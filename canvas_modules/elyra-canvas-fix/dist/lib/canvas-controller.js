@@ -1,0 +1,2 @@
+"use strict";require("../createClass-826941b3.js"),require("../isArrayLikeObject-694e2d20.js");var e=require("../canvas-controller-1bda6efd.js");require("./command-stack.js"),require("../canvas-constants-07dbe4b7.js"),require("../canvas-logger-bb537fb3.js"),require("../getPrototypeOf-1e698126.js"),require("../datarecord-metadata-v3-schema-677aa8cc.js"),require("../en-7cc24212.js"),require("uuid"),require("redux"),require("jsonschema"),require("@elyra/pipeline-schemas"),require("immutable"),module.exports=e.CanvasController;
+//# sourceMappingURL=canvas-controller.js.map

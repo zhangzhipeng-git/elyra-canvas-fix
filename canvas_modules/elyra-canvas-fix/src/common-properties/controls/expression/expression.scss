@@ -1,0 +1,156 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import "./expression-builder/expression-builder";
+@import "./expression-toggle/expression-toggle";
+
+.react-codemirror2 {
+	.CodeMirror {
+		width: 100%;
+		background: $field-02;
+		color: $text-01;
+
+		.CodeMirror-gutters {
+			border-right: none;
+			background-color: inherit;
+		}
+
+		.CodeMirror-lines {
+			padding-top: $spacing-05;
+			.CodeMirror-line-like {
+				padding-left: $spacing-03;
+			}
+			.CodeMirror-placeholder {
+				opacity: 0.5;
+				@include carbon--type-style("code-02");
+			}
+			.CodeMirror-cursor {
+				border-left: 1px solid $text-01;
+			}
+			.CodeMirror-code {
+
+				.CodeMirror-linenumber {
+					@include carbon--type-style("body-short-01");
+				}
+
+				.CodeMirror-line {
+					padding-left: $spacing-03;
+
+					span {
+						@include carbon--type-style("code-02");
+					}
+				}
+			}
+		}
+	}
+
+	.cm-s-error.CodeMirror { border: $spacing-01 solid $support-01; }
+
+	.cm-s-warning.CodeMirror { border: $spacing-01 solid $support-03; }
+
+	.cm-s-disabled.CodeMirror { opacity: 0.5}
+
+	.cm-s-custom .cm-keyword { color: $link-01; }
+
+	.cm-s-custom .cm-number { color: $text-02; }
+
+	.cm-s-custom .cm-def { color: $support-01; }
+
+	.cm-s-custom .cm-comment { color: $support-02; }
+
+	.cm-s-custom .cm-variable,
+	.cm-s-custom .cm-punctuation,
+	.cm-s-custom .cm-property,
+	.cm-s-custom .cm-operator {
+		color: $text-01;
+	}
+	.cm-s-custom .cm-variable-2 { color: $text-01; }
+
+	.cm-s-custom .cm-variable-3, .cm-s-custom .cm-type { color: $text-01; }
+
+	.cm-s-custom .cm-string { color: $text-error; }
+
+	.cm-s-custom .cm-string-2 { color: $text-error; }
+
+	.cm-s-custom .cm-meta { color: $ui-01; }
+}
+
+/* Override so Codemirror autocomplete shows up on top */
+.CodeMirror-hints {
+	z-index: 1110;
+}
+
+.properties-expression-editor {
+	border: 1px solid $ui-03;
+	&.disabled {
+		opacity: 0.5;
+	}
+	&.error, &.warning {
+		border: 0;
+	}
+}
+
+.properties-light-disabled {
+	.CodeMirror {
+		background: $field-01;
+	}
+}
+
+.properties-expression-link-container {
+	display: flex;
+	justify-content: space-between;
+
+	.properties-expression-validate {
+		display: flex;
+		flex-direction: row-reverse;
+		.icon {
+			margin: $spacing-01;
+			svg {
+				height: 10px;
+				width: 10px;
+			}
+		}
+		.validateLink {
+			min-height: $spacing-07;
+			padding: $spacing-02;
+		}
+	}
+}
+
+.properties-expression-header {
+	position: relative;
+	height: $spacing-07;
+	.properties-expression-title {
+		@include carbon--type-style("label-01");
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+	}
+	.properties-expression-link-container {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.properties-expression-button.bx--btn--sm.bx--btn--ghost {
+	padding: $spacing-02;
+	svg {
+		height: 20px;
+		width: 20px;
+		margin-left: 0;
+	}
+}

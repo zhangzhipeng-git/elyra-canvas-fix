@@ -1,0 +1,694 @@
+{
+      "version": "3.0",
+      "categories": [
+        {
+          "label": "SOURCES",
+          "description": "Data Source for flows",
+          "image": "/images/palette-categories/sources_open.svg",
+          "id": "canvas-sources",
+          "node_types": [
+            {
+              "id": "",
+              "type": "binding",
+              "op": "com.ibm.commonicons.sources.varfile",
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Var. File",
+                  "description": "Data input to provide data",
+                  "image": "/images/common_node_icons/sources/source_user_input.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "binding",
+              "op": "com.ibm.commonicons.sources.varimport",
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Var. Import",
+                  "description": "Variable import for variables being imported",
+                  "image": "/images/common_node_icons/sources/source_var_import.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "MODELS",
+          "description": "Models for different modelling algorithms",
+          "image": "/images/palette-categories/models_open.svg",
+          "id": "canvas-models",
+          "node_types": [
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "C50",
+                  "description": "C50 Model",
+                  "image": "/images/common_node_icons/models/model_c50.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Cart Build",
+                  "description": "Cart Build Model",
+                  "image": "/images/common_node_icons/models/model_cart_build.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Feature Selection",
+                  "description": "Feature Selection Model",
+                  "image": "/images/common_node_icons/models/model_feature_selection.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Linear Regression",
+                  "description": "Linear Regression Model",
+                  "image": "/images/common_node_icons/models/model_linear_regression.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Logistic Regression",
+                  "description": "Logistic Regression Model",
+                  "image": "/images/common_node_icons/models/model_logistic_regression.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Neural Network",
+                  "description": "Neural Network Model",
+                  "image": "/images/common_node_icons/models/model_neural_network.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "model_node",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Random Forest",
+                  "description": "Random Forest Model",
+                  "image": "/images/common_node_icons/models/model_random_forest.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "OPERATIONS",
+          "description": "Row and column operations for data preparation",
+          "image": "/images/palette-categories/operations_open.svg",
+          "id": "canvas-operations",
+          "node_types": [
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.aggregate",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Aggregate",
+                  "description": "Aggregate data",
+                  "image": "/images/common_node_icons/operations/operation_aggregate.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.append",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Append",
+                  "description": "Append data",
+                  "image": "/images/common_node_icons/operations/operation_append.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.balance",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Balance",
+                  "description": "Balance data",
+                  "image": "/images/common_node_icons/operations/operation_balance.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.binning",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Binning",
+                  "description": "Binning data",
+                  "image": "/images/common_node_icons/operations/operation_binning.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.derive",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Derive",
+                  "description": "Derive data",
+                  "image": "/images/common_node_icons/operations/operation_derive.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "execution_node",
+              "op": "com.ibm.commonicons.operations.distinct",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "id": "outPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": -1
+                      },
+                      "label": "Output Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Distinct",
+                  "description": "Distinct data",
+                  "image": "/images/common_node_icons/operations/operation_distinct.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "OUTPUTS",
+          "description": "Outputs for flows",
+          "image": "/images/palette-categories/outputs_open.svg",
+          "id": "canvas-outputs",
+          "node_types": [
+            {
+              "id": "",
+              "type": "binding",
+              "op": "data_audit",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Data Audit",
+                  "description": "Node to audit data",
+                  "image": "/images/common_node_icons/output/output_data_audit.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "binding",
+              "op": "evaluate",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Evaluate",
+                  "description": "Node to evaluate data",
+                  "image": "/images/common_node_icons/output/output_evaluate.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "binding",
+              "op": "histogram",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Histogram",
+                  "description": "Histogram graph for display",
+                  "image": "/images/common_node_icons/output/output_histogram.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "binding",
+              "op": "table",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Table",
+                  "description": "Writes data to a database table",
+                  "image": "/images/common_node_icons/output/output_table.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            },
+            {
+              "id": "",
+              "type": "binding",
+              "op": "var_export",
+              "inputs": [
+                {
+                  "id": "inPort",
+                  "app_data": {
+                    "ui_data": {
+                      "cardinality": {
+                        "min": 0,
+                        "max": 1
+                      },
+                      "label": "Input Port"
+                    }
+                  }
+                }
+              ],
+              "parameters": {},
+              "app_data": {
+                "ui_data": {
+                  "label": "Var. Export",
+                  "description": "Exports variables data",
+                  "image": "/images/common_node_icons/output/output_var_export.svg",
+                  "x_pos": 0,
+                  "y_pos": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }

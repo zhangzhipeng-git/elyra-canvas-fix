@@ -1,0 +1,601 @@
+{
+  "doc_type": "pipeline",
+  "version": "3.0",
+  "json_schema": "https://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "id": "detached-link-pipeline-flow",
+  "primary_pipeline": "detached-link-pipeline",
+  "parameters": {
+    "props": [
+      {
+        "field1": "flow-param-val1"
+      },
+      {
+        "field2": "flow-param-val2"
+      }
+    ]
+  },
+  "pipelines": [
+    {
+      "id": "detached-link-pipeline",
+      "name": "My pipeline",
+      "nodes": [
+        {
+          "id": "id8I6RH2V91XW",
+          "type": "binding",
+          "op": "variablefile",
+          "app_data": {
+            "my_data": {
+              "value": "Binding node - data value"
+            },
+            "ui_data": {
+              "label": "Binding (entry) node",
+              "image": "/images/nodes/varfile.svg",
+              "x_pos": 70,
+              "y_pos": 165,
+              "description": "Imports data from a comma-delimited file"
+            }
+          },
+          "outputs": [
+            {
+              "id": "outPort",
+              "schema_ref": "TQRecT",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Binding node -> Outputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              },
+              "parameters": {
+                "props": [
+                  {
+                    "field1": "binding-node-port-param-val1"
+                  },
+                  {
+                    "field2": "binding-node-port-param-val2"
+                  }
+                ]
+              }
+            }
+          ],
+          "parameters": {
+            "props": [
+              {
+                "field1": "binding-node-param-val1"
+              },
+              {
+                "field2": "binding-node-param-val2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "excution-node-id",
+          "type": "execution_node",
+          "op": "dummy_operator",
+          "app_data": {
+            "my_data": {
+              "value": "Execution node - data value"
+            },
+            "ui_data": {
+              "label": "Execution node",
+              "image": "/images/nodes/sort.svg",
+              "x_pos": 332.5,
+              "y_pos": 165,
+              "description": "Sorts the data"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Execution node -> Inputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Execution node -> Outputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              },
+              "parameters": {
+                "props": [
+                  {
+                    "field1": "execution-node-port-param-val1"
+                  },
+                  {
+                    "field2": "execution-node-port-param-val2"
+                  }
+                ]
+              }
+            }
+          ],
+          "parameters": {
+            "props": [
+              {
+                "field1": "execution-node-param-val1"
+              },
+              {
+                "field2": "execution-node-param-val2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "nodeIDSuperNodePE",
+          "type": "super_node",
+          "open_with_tool": "canvas",
+          "subflow_ref": {
+            "pipeline_id_ref": "modeler-sub-pipeline"
+          },
+          "app_data": {
+            "my_data": {
+              "value": "Super node - data value"
+            },
+            "ui_data": {
+              "label": "Super node",
+              "image": "useDefaultIcon",
+              "x_pos": 542.5,
+              "y_pos": 165,
+              "class_name": "canvas-node",
+              "description": "nodeIDSuperNodePE",
+              "is_expanded": false,
+              "expanded_width": 200,
+              "expanded_height": 200
+            }
+          },
+          "inputs": [
+            {
+              "id": "input1SuperNodePE",
+              "subflow_node_ref": "entryID1SE",
+              "schema_ref": "schema3",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Super node -> Inputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "label": "input1SuperNodePE"
+                }
+              }
+            },
+            {
+              "id": "input2SuperNodePE",
+              "subflow_node_ref": "entryID2SE",
+              "schema_ref": "schema2",
+              "app_data": {
+                "ui_data": {
+                  "label": "input2SuperNodePE"
+                }
+              },
+              "links": [
+                {
+                  "id": "a81684aa-9b09-4620-aa59-54035a5de913",
+                  "node_id_ref": "excution-node-id",
+                  "app_data": {
+                    "ui_data": {
+                      "class_name": "d3-data-link"
+                    }
+                  }
+                }
+              ],
+              "parameters": {
+                "props": [
+                  {
+                    "field1": "super-node-port2-param-val1"
+                  },
+                  {
+                    "field2": "super-node-port2-param-val2"
+                  }
+                ]
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "output1SuperNodePE",
+              "subflow_node_ref": "exitID1SE",
+              "schema_ref": "schema2",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Execution node -> Outputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "label": "output1SuperNodePE"
+                }
+              }
+            }
+          ],
+          "parameters": {
+            "props": [
+              {
+                "field1": "super-node-param-val1"
+              },
+              {
+                "field2": "super-node-param-val2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "id125TTEEIK7V",
+          "type": "model_node",
+          "model_ref": "my-model",
+          "app_data": {
+            "my_data": {
+              "value": "Model node - data value"
+            },
+            "ui_data": {
+              "label": "Model Node",
+              "image": "/images/nodes/model.svg",
+              "x_pos": 700,
+              "y_pos": 270,
+              "class_name": "canvas-node"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Model node -> Inputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "2a640b77-76f7-4601-a794-7e71fc7ee241",
+                  "node_id_ref": "nodeIDSuperNodePE",
+                  "port_id_ref": "output1SuperNodePE",
+                  "app_data": {
+                    "ui_data": {
+                      "class_name": "d3-data-link"
+                    }
+                  }
+                }
+              ],
+              "parameters": {
+                "props": [
+                  {
+                    "field1": "model-node-port-param-val1"
+                  },
+                  {
+                    "field2": "model-node-port-param-val2"
+                  }
+                ]
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "my_data": {
+                  "my_field": "Model node -> Outputs -> My data -> My field -> My value"
+                },
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ],
+          "parameters": {
+            "props": [
+              {
+                "field1": "model-node-param-val1"
+              },
+              {
+                "field2": "model-node-param-val2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "id5KIRGGJ3FYT",
+          "type": "binding",
+          "app_data": {
+            "ui_data": {
+              "label": "Binding (exit) node",
+              "image": "/images/nodes/table.svg",
+              "x_pos": 542.5,
+              "y_pos": 390,
+              "class_name": "canvas-node",
+              "associations": [
+                {
+                  "id": "id5KIRGGJ3FYT.id125TTEEIK7V",
+                  "node_ref": "id125TTEEIK7V",
+                  "class_name": "canvas-object-link"
+                }
+              ]
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "d5bef845-9d69-4cca-95ec-27d481b4e776",
+                  "node_id_ref": "nodeIDSuperNodePE",
+                  "port_id_ref": "output1SuperNodePE",
+                  "app_data": {
+                    "ui_data": {
+                      "class_name": "d3-data-link"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "e15f6fa0-2b7c-4c1e-b203-5b8f7f5dbc58",
+          "type": "execution_node",
+          "op": "select",
+          "app_data": {
+            "ui_data": {
+              "label": "Select",
+              "image": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9Ii0xLjEgLTIgNDcuMyA0My41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IC0xLjEgLTIgNDcuMyA0My41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMUQzNjQ5O30NCgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzE1MjkzNTtzdHJva2Utd2lkdGg6MjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MntmaWxsOm5vbmU7c3Ryb2tlOiNGOUY5RkI7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQ0KCS5zdDN7ZmlsbDpub25lO30NCgkuc3Q0e2ZpbGw6IzQxRDZDMzt9DQoJLnN0NXtmb250LWZhbWlseTonSGVsdk5ldWVSb21hbmZvcklCTSc7fQ0KCS5zdDZ7Zm9udC1zaXplOjIwcHg7fQ0KCS5zdDd7ZmlsbDojRjlGOUZCO30NCjwvc3R5bGU+DQo8Zz4NCgkNCgkJPGltYWdlIHN0eWxlPSJvdmVyZmxvdzp2aXNpYmxlO29wYWNpdHk6MC42NjtlbmFibGUtYmFja2dyb3VuZDpuZXcgICAgOyIgd2lkdGg9IjUyIiBoZWlnaHQ9IjQ1IiB4bGluazpocmVmPSJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQURRQUFBQXRDQVlBQUFEaG9VaTRBQUFBQ1hCSVdYTUFBQXNTQUFBTEVnSFMzWDc4QUFBQQpHWFJGV0hSVGIyWjBkMkZ5WlFCQlpHOWlaU0JKYldGblpWSmxZV1I1Y2NsbFBBQUFCV1ZKUkVGVWVOck1XdDF1R2tjWTNabGRESmkvCnBGdXMwa1N4V2lHcnRvc2xWMUZ1V3FtKzhDdVlsN0Q4RExaZngzNEpWMVZ2MHFvWFRrMGt4M0hrUkEwVlpGMy9zQVlNTzlQemJaWVYKSmZ6c2tnVjJwZEhDaUoyWk0rZDhaMmEraFNualhVeEtxZXp2N3pObEF0ZnU3cTVrekc1YStoNlkzd2YyOXZhNFlSZ1JYZGVqeldZegpjbjkvSHlpb1ZDb2wwSDRiN1Rmd3RZMytoSi9uTmI5Z2FyVmFQSkZJWkFIbWtSRGlnWVlMYkFVQ0NxeEkwelJieVdUU3VMdTdlMWV2CjF3MVUzL3RoeWc4Z1JzeEVvOUVGeFZLZUNpNmVvWnZIVXBFeHBnUkdrdVNjbTlLU3B3RDNDK2Fxc2JXMTFUNDhQTFFDQjRTR09XWXUKYVZuV3Q1TEpIMUgxRTBvT1pTNHd2VW1iaVJwdUQ4RjZGYUQrV1YxZHZRTWc0WlVscjRBWUdvN2MzTnpva1Voa0NVMnZvRzRSSlFOMgoxQUJEaUFhZEpKa3h5ZGJBME92YjI5dkxnNE9EVnJGWTlNU1M2cEVkTlpQSnBERmp5K2pvWjhiWk9xcXpEanZjTVpjZ0NuY0xVMXE0Clg2cXErdUhxNnFxMnNiSFJQam82R3NrUzk4b09URUFIb0R3NnlrTU9PdW9qNDdpa2g0czdMSDNERmY0TWZhMDFHbzBGaWw4di9ZMWsKQ0hTcjUrZm5HZEQvWFE4N2t3TFVZWXJZandKVVMwaFJpY1ZpbDdsY3Jsa3FsZVRZREpGTm80RTR3RkR3TDZPcnBRbXo0NDRML2NUSgpkR0FReTFER0VpbUVsREtxMzJFTXNVS2hNQWNiemFIeHA1aXBEZFFWVUw1MHpHU1NnR2hOb3ZaVit5NFVrNnU4akhYUEdNVVNIMlhUCmFPU2psaFc1aHVxRktiRFRMYjJJclFqRUxjV3ZGNWE0QnlOWUl0cHQrai9LZ0N2VHU2aXZCTWF3Q0pZS2tQNGliRHlKdU9hK0pEZkkKQ05Ed3ROanBab241c1hGdG1CR0FrV2thZ1NjYmgrTVpzSEZzK2N5LysrM3oxREFaUVJBMnprTm1CSjl0NHp5RVJqREl4bTNwalRJSQpkZFIrYlFaRzhGa0dvZlhaVGVmeFBUOWpJeGhwRUNpMHp6Tnc0S3hCVmU4N0JzRTdzVk90VmhNd2d5ZGc1M3ZuYUpBSWc5VDZMYllVCjE0anhBbzR1UDRDbFIyUVdsT053WXdqc3FQRjRuT1QyQkxGRDZMOElJVHZkTE1Vd1R0b2dmMDFuTXBoWXBKT3dzYzh5MTlmWEtnVS8KQUQwRWFnSTJGMUl3TGlpTVVjTUtGS1d3Z1lXemJyUVNabURoQjNXQStoZkliM0QzbFppWXdTVXd4amFtdkVtWklTeTA4bisyZlhKeQpZdFhyZFFMeUZneTlJUWRCYVlVVUZPVVhHaGhuRlhjeWcydkVmb3R5ZVM0Z1NrSmtzMWtUV253cm1md0xWUmNvcHZOd21DN3BUSFJGCktPSUYxUFNuWlZtMEJXbzZpVW5YeFNSWWFrV2pVUU1zbmVHeE0vekFDQ0ZMTk1FMUZGTFJjNHp4R0J1YnFxN3I3amhkV3lhV0FNaHMKdDlzWHFIMEJZQmQyU2tsS0VTWjI3SW1XeWlrK3Y4Ull5eXNySy9YdTdHcjNPdFBOMGlrMCtoSjFaVEtMa0VpUHhtRGFFNDBKcDRsUApwVksxWXJFb0JtNU9pU1ZhZVJGa2I2RFI1d0IxVEhvTmdmUzYyVG1qc0tDSkp3SjZ4OVY3SHBLT0hpdHd2V05zMDNXQStvb1dMNVFIClh2TjRnYU9CN0FHbTVyTFRhbC9NejgrYlRrWjErQkdjOUVpNkpIMlNUa212TXpZSTRjaStUR0ZBNFRDSW5ZRTVCZElsNlRNRUJ1SGEKTk1tZndvRENnY0tpSHp2RGtpUmhNUWpYcHUyWWhrMWptMVBwdG1uUGVUa2NiWlgxOVhVTG9DekVFc2Z1TnUxc1doUE9jMndLN056VApHd2g4K2dPOS9ZcEY5QlhHZEx1OXZUMXdVb2U5ZlppcFFmUXpnblE2L1lsTiswMEZ6OG9nZkJtQlowQkRER0tTK3p6ZlJ1QUwwQXoyCmViNk53Sk1wOUJyRTV1YW1RQ3dwcXFZbTBDeTlqZENkWEJsek9ncWlDQ2MzVVBaakJGNU40Uk9XOHZtOGdRNG9qa3EyNDBrN1R6WVgKNUV0amg1MHpIR09PU2VaZWpHQWNRUFkrYjJkbnB3YnBuV3RNKzAxeVNSSjRUT2Y3QUZNZ0JNaGtrcDNpY3drUy8rREZDTVlDMUxGeAp4R1lGUXYyZE0vNmUvcWNBZG9MN240TENKTnBzYVpwbUNFdThBME9tRnlQb1RRdjV1c0wrVDVKeEJ4UGEvL3I4SjhBQVE3Q3dhNEtHCkRSMEFBQUFBU1VWT1JLNUNZSUk9IiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIC0zIC0yKSI+DQoJPC9pbWFnZT4NCgk8Zz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MCIgcG9pbnRzPSIxMS4xLDM3IDAuNCwxOC41IDExLjEsMCAzMi42LDAgNDMuNCwxOC41IDMyLjYsMzcgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMS4xLDM3IDAuNCwxOC41IDExLjEsMCAzMi42LDAgNDMuNCwxOC41IDMyLjYsMzcgCQkiLz4NCgk8L2c+DQo8L2c+DQo8bGluZSBjbGFzcz0ic3QyIiB4MT0iNyIgeTE9IjE4LjUiIHgyPSIxNiIgeTI9IjE4LjUiLz4NCjxyZWN0IHg9IjE2IiB5PSIxMC4zIiBjbGFzcz0ic3QzIiB3aWR0aD0iMTEiIGhlaWdodD0iMTYuMiIvPg0KPHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAxNS45OTk5IDI0LjU4ODUpIiBjbGFzcz0ic3Q0IHN0NSBzdDYiPj88L3RleHQ+DQo8cG9seWdvbiBjbGFzcz0ic3Q3IiBwb2ludHM9IjMyLDIyLjYgMzIsMjAgMjYsMjAgMjYsMTcgMzIsMTcgMzIsMTMuOSAzOS41LDE4LjIgIi8+DQo8L3N2Zz4NCg==",
+              "x_pos": 709,
+              "y_pos": 428.5,
+              "description": "Selects a subset of records based on an expression"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": 1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "35719199-3188-4f81-a8ef-3d5743eb695f",
+                  "node_id_ref": "id5KIRGGJ3FYT",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "app_data": {
+        "ui_data": {
+          "zoom": {
+            "x": 0,
+            "y": 0,
+            "k": 1
+          },
+          "comments": [
+            {
+              "id": "id42ESQA3VPXB",
+              "x_pos": 17.5,
+              "y_pos": 15,
+              "width": 237,
+              "height": 76,
+              "class_name": "canvas-comment",
+              "content": "This canvas shows examples of detached links. There are three types:\n1. Fully detached\n2. Semi-detached from source node\n3. Semi-detached from target node",
+              "associated_id_refs": []
+            },
+            {
+              "id": ">.9?/`~!@#$%^&*()_+=-{}][|:;<,",
+              "x_pos": 507.5,
+              "y_pos": 60,
+              "width": 200,
+              "height": 37,
+              "class_name": "canvas-comment",
+              "content": "Comment attached to 4 nodes",
+              "associated_id_refs": [
+                {
+                  "id": "3b54f984-ab32-4da0-8a5a-41e3dba5dde3",
+                  "node_ref": "id8I6RH2V91XW",
+                  "class_name": "canvas-comment-link"
+                },
+                {
+                  "id": "eaa87bbf-0a30-47df-bda1-da154c566dfb",
+                  "node_ref": "excution-node-id",
+                  "class_name": "canvas-comment-link"
+                },
+                {
+                  "id": "307b36cc-4058-41b5-9840-7ed01740023c",
+                  "node_ref": "nodeIDSuperNodePE",
+                  "class_name": "canvas-comment-link"
+                },
+                {
+                  "id": "bbf2f832-b096-471d-a6a1-9072619f1747",
+                  "node_ref": "id125TTEEIK7V",
+                  "class_name": "canvas-comment-link"
+                }
+              ]
+            }
+          ],
+          "detached_links": [
+            {
+              "id": "total-detached-dddd-dddddddddd",
+              "src_pos": {
+                "x_pos": 360,
+                "y_pos": 480
+              },
+              "trg_pos": {
+                "x_pos": 320,
+                "y_pos": 420
+              },
+              "app_data": {
+                "ui_data": {
+                  "class_name": "d3-data-link"
+                }
+              },
+              "type_attr": "Primary",
+              "description": "A test description for a link"
+            },
+            {
+              "id": "source-attached-dddddddddd",
+              "src_node_id": "id8I6RH2V91XW",
+              "src_node_port_id": "outPort",
+              "trg_pos": {
+                "x_pos": 220,
+                "y_pos": 350
+              },
+              "app_data": {
+                "ui_data": {
+                  "class_name": "d3-data-link"
+                }
+              },
+              "type_attr": "Primary",
+              "description": "A test description for a link"
+            },
+            {
+              "id": "target-attached-dddddddddd",
+              "src_pos": {
+                "x_pos": 260,
+                "y_pos": 360
+              },
+              "trg_node_id": "excution-node-id",
+              "trg_node_port_id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "class_name": "d3-data-link"
+                }
+              },
+              "type_attr": "Primary",
+              "description": "A test description for a link"
+            },
+            {
+              "id": "source-attached-eeeeee",
+              "src_node_id": "id5KIRGGJ3FYT",
+              "src_node_port_id": "outPort",
+              "trg_pos": {
+                "x_pos": 736.0113525390625,
+                "y_pos": 381.00567626953125
+              },
+              "app_data": {
+                "ui_data": {
+                  "class_name": "d3-data-link"
+                }
+              },
+              "type_attr": "Primary",
+              "description": "A test description for a link"
+            }
+          ]
+        }
+      },
+      "runtime_ref": "test_runtime",
+      "parameters": {
+        "props": [
+          {
+            "field1": "pipeline-param-val1"
+          },
+          {
+            "field2": "pipeline-param-val2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "modeler-sub-pipeline",
+      "nodes": [],
+      "app_data": {
+        "ui_data": {
+          "comments": []
+        }
+      },
+      "runtime_ref": "test_runtime"
+    }
+  ],
+  "schemas": [
+    {
+      "id": "TQRecT",
+      "fields": [
+        {
+          "name": "ticker",
+          "type": "rstring"
+        }
+      ]
+    }
+  ],
+  "runtimes": [
+    {
+      "id": "test_runtime",
+      "name": "test_runtime"
+    }
+  ],
+  "app_data": {
+    "my_data": {
+      "value": "Pipeline Flow - data value"
+    }
+  }
+}

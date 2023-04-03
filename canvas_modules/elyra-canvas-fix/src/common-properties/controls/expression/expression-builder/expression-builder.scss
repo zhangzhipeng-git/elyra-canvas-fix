@@ -1,0 +1,132 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* These are used in custom expression builder */
+$field-function-width: 85%;
+$operators-width: 15%;
+$fields-table-margin: 52%;
+$fields-table-width: 48%;
+$values-table-width: 48%;
+$functions-table-margin: 70%;
+$functions-table-width: 68%;
+$functions-help-width: 28%;
+$operator-width: 36px;
+$operator-margin: 50%;
+
+.properties-expression-selection-container, .properties-field-and-values-table-container,
+.properties-functions-table-container {
+	width: 100%;
+	tbody {
+		tr {
+			border-bottom: 0;
+		}
+	}
+}
+
+
+.properties-expression-selection-container {
+	padding-top: $spacing-03;
+}
+
+.properties-expression-selection-operator {
+	padding-bottom: $spacing-07;
+}
+
+.properties-field-table-container {
+	width: $fields-table-width;
+	float: left;
+	.properties-ft-search-container {
+		width: 100%;
+	}
+}
+
+.properties-value-table-container {
+	width: $values-table-width;
+	margin-left: $fields-table-margin;
+	.properties-ft-search-container {
+		width: 100%;
+	}
+}
+.properties-functions-table {
+	width: $functions-table-width;
+	float: left;
+	.properties-ft-search-container {
+		width: 100%;
+	}
+}
+
+.properties-help-table-container {
+	width: $functions-help-width;
+	margin-left: $functions-table-margin;
+}
+
+.properties-function-help-command {
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.properties-function-help-text {
+	overflow-wrap: break-word;
+}
+
+.properties-operator-title {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+}
+
+.properties-operator-container {
+	display: flex;
+	flex-wrap: wrap;
+
+	.properties-operator-tooltip-container {
+		width: $operator-width;
+		margin-right: $spacing-03;
+		margin-top: $spacing-03;
+	}
+
+	.properties-operator-button {
+		height: $operator-width;
+		width: $operator-width;
+		padding: 0;
+		.properties-operator-button-label {
+			margin: 0 auto;
+		}
+	}
+}
+
+.properties-expression-selection-content-switcher {
+	padding-bottom: $spacing-08;
+	div {
+		max-width: 50%;
+		float: right;
+	}
+}
+
+.properties-expression-field-select, .properties-expression-function-select {
+	padding-top: $spacing-06;
+	padding-bottom: $spacing-06;
+}
+.properties-expression-table-dropdown-header {
+	@include carbon--type-style("label-01");
+	padding-bottom: $spacing-02;
+}
+
+.properties-primaryTabs .bx--tabs-trigger {
+	margin-bottom: 5px;
+}

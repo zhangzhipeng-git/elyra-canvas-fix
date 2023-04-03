@@ -1,0 +1,94 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import "./properties-main-widths.scss";
+$properties-modal-buttons-height: $spacing-10;
+
+.properties-right-flyout {
+	// Set the font explicitly to 14px to shrink them across the entire properties editor
+	font-size: 14px;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	border-left: 1px solid $ui-03;
+	outline: none;
+	&.properties-small {
+		width: $common-properties-small-flyout-width;
+	}
+	&.properties-medium {
+		width: $common-properties-medium-flyout-width;
+	}
+	&.properties-large {
+		width: $common-properties-large-flyout-width;
+	}
+	&.properties-max {
+		width: $common-properties-max-flyout-width;
+	}
+	&:hover {
+		.properties-btn-resize {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	.properties-btn-resize {
+		transition: visibility $duration--moderate-02, opacity $duration--moderate-02;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 50%;
+		left: -13px;
+		z-index: 1; // needs to sit on top of common-properties div
+		min-height: 24px;
+		min-width: 24px;
+		background-color: $ui-01;
+		border: 1px $ui-04 solid;
+		padding: 2px;
+		justify-content: center;
+		&:hover {
+			background-color: $ui-03;
+		}
+		svg {
+			fill: $icon-01;
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+
+
+.properties-right-flyout > .properties-custom-container {
+	height: calc(100% - 65px - #{$properties-modal-buttons-height}); // Properties title - 65px
+	overflow-y: auto;
+	transform: translateZ(0); // https://github.com/elyra-ai/canvas/issues/160
+	&.properties-custom-container-with-heading {
+		height: calc(100% - 89px - #{$properties-modal-buttons-height}); // Properties title - 89px
+	}
+	&.properties-custom-container-applyOnBlur {
+		height: calc(100% - #{$spacing-12}); // Properties title - 97px
+	}
+	&.properties-custom-container-applyOnBlur-with-heading {
+		height: calc(100% - 89px); // Properties title - 89px
+	}
+}
+
+.properties-light-enabled {
+	background-color: $ui-01; // Override theme background-color when light option is true
+}
+
+.properties-light-disabled {
+	background-color: $ui-background;
+}

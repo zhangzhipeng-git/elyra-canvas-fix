@@ -1,0 +1,11 @@
+{
+  "name": "eslint-config-canvas",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 12",
+    "npm": ">= 6"
+  }
+}

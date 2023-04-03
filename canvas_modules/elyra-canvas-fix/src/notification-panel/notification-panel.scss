@@ -1,0 +1,225 @@
+/*
+ * Copyright 2017-2022 Elyra Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$notification-panel-header-height: 35px;
+$notification-message-height: 48px;
+$notification-left-border-color-width: 4px;
+$toolbar-button-height: 41px; // Allow one extra pixel for the toolbar border
+
+// This section adds an ease-in ease-out effect for the notification-panel-container
+.notification-panel-container {
+	transition: 0.25s ease-in-out;
+	opacity: 1;
+	margin-top: 0;
+
+	&.panel-hidden {
+		transition: 0.25s ease-in-out;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.notification-panel {
+	position: absolute;
+	width: 320px;
+	height: fit-content;
+	right: 0;
+	top: $toolbar-button-height;
+}
+
+.notification-panel-header-container {
+	min-height: $notification-panel-header-height;
+	width: inherit;
+	background-color: $ui-01;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid $ui-03;
+	border-bottom: 0;
+	padding: $spacing-05;
+	.notification-panel-header {
+		@include carbon--type-style("productive-heading-02");
+	}
+	.notification-panel-subtitle {
+		@include carbon--type-style("helper-text-01");
+		color: $text-02;
+		padding-top: $spacing-02;
+	}
+	.notification-panel-close-icon {
+		position: absolute;
+		right: $spacing-05;
+		top: ($spacing-05 + $spacing-02);
+		cursor: pointer;
+	}
+}
+
+.notification-panel-button-container {
+	width: 100%;
+	height: 49px;
+	background-color: $ui-01;
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid $ui-03;
+	border-top: 0;
+	padding: $spacing-03 0;
+	font-weight: 400;
+}
+
+.notification-panel-messages-container {
+	width: inherit;
+	max-height: calc(100% - #{$notification-panel-header-height});
+	height: fit-content;
+}
+.notification-panel-messages {
+	max-height: 500px;
+	height: fit-content;
+	overflow-y: auto;
+	line-height: normal;
+	background-color: $ui-01;
+	border: 1px solid $ui-03;
+	.notifications-button-container {
+		border-bottom: 1px solid $ui-03;
+		min-height: $notification-message-height;
+	}
+	.notification-panel-empty-message-container {
+		min-height: $notification-message-height;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.notification-panel-empty-message {
+			@include carbon--type-style("body-short-01");
+			text-align: center;
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
+
+	.notifications-button-container:nth-last-of-type(1) {
+		border-bottom: 0;
+	}
+
+	.notifications {
+		padding: $spacing-05 $spacing-05 $spacing-05 calc(#{$spacing-05} - #{$notification-left-border-color-width});
+		display: inline-flex;
+		width: 100%;
+		min-height: $notification-message-height;
+		background-color: $ui-01;
+		border-style: none;
+		border-left: $notification-left-border-color-width solid $ui-01;
+		cursor: default;
+		margin-top: 0; // Required for Safari
+		margin-bottom: 0; // Required for Safari
+
+		&.clickable {
+			cursor: pointer;
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+			border-style: none;
+			border-left: $notification-left-border-color-width solid $ui-01;
+		}
+
+		&:hover {
+			background-color: $hover-ui;
+
+			&.unspecified {
+				border-left: $notification-left-border-color-width solid $field-01;
+			}
+			&.error {
+				border-left: $notification-left-border-color-width solid $support-01;
+			}
+			&.warning {
+				border-left: $notification-left-border-color-width solid $support-03;
+			}
+			&.success {
+				border-left: $notification-left-border-color-width solid $support-02;
+			}
+			&.info {
+				border-left: $notification-left-border-color-width solid $support-04;
+			}
+		}
+
+		.notification-message-type {
+			display: flex;
+			justify-content: center;
+			height: 18px;
+			width: fit-content;
+			padding-right: $spacing-03;
+
+			> svg {
+				display: flex;
+				justify-content: center;
+				width: $spacing-05;
+				height: 100%;
+			}
+		}
+
+		.notification-message-details {
+			text-align: left;
+			overflow-wrap: break-word;
+			width: 266px;
+
+			.notification-message-title {
+				@include carbon--type-style("productive-heading-01");
+				color: $text-02;
+				padding-bottom: $spacing-02;
+			}
+
+			.notification-message-subtitle {
+				@include carbon--type-style("label-01");
+				color: $text-01;
+				hr {
+					margin-bottom: $spacing-03;
+					border-bottom: 0;
+					border-top: solid 1px $ui-03;
+				}
+			}
+
+			.notification-message-content {
+				@include carbon--type-style("label-01");
+				color: $text-02;
+			}
+		}
+	}
+}
+
+.notification-panel-messages + * {
+	clear: both;
+}
+
+.notification-message-timestamp {
+	display: inline-flex;
+	color: $text-02;
+	svg {
+		width: 10px;
+		height: 10px;
+		margin-right: 3px;
+		margin-top: 3px;
+	}
+
+	.notification-message-string {
+		font-size: 10px;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
+.notification-message-close:hover {
+	text-decoration: underline;
+}
