@@ -114,7 +114,7 @@ class CommonCanvas extends React.Component {
 		const palette = (<Palette canvasController={this.props.canvasController} containingDivId={this.containingDivId} />);
 		const centralItems = (<CommonCanvasCentralItems canvasController={this.props.canvasController} containingDivId={this.containingDivId} />);
 
-		const className = this.generateClass() + " fix";
+		const className = this.generateClass();
 
 		return (
 			<Provider store={this.props.canvasController.getStore()}>
